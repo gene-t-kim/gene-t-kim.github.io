@@ -72,20 +72,44 @@ also works, but a local server matches how the site behaves once deployed.
 
 ## Publishing
 
-**GitHub Pages** — free, and the usual choice for an academic site:
+This repo is <https://github.com/gene-t-kim/gene-t-kim.github.io>. It is
+currently **private**, and GitHub Pages is **not** enabled — nothing is public
+yet.
+
+To publish edits, commit and push as usual:
 
 ```bash
-git init && git add . && git commit -m "Initial site"
+git add -A && git commit -m "Update profile" && git push
 ```
 
-Push to a repo named `<your-username>.github.io`, then enable Pages in the
-repo's Settings → Pages. The site appears at `https://<your-username>.github.io`.
+### Going live
 
-**Netlify** — drag this folder onto <https://app.netlify.com/drop>.
+GitHub Pages needs a public repo on the free plan, so going live is two steps.
+Run these once the bracketed placeholders are filled in:
 
-**Harvard hosting** — FAS provides personal web space; upload these four files
-to your `public_html` directory over SFTP. Check with your department's IT
-about the current hostname and whether a custom domain is available.
+```bash
+gh repo edit gene-t-kim/gene-t-kim.github.io --visibility public --accept-visibility-change-consequences
+```
+
+```bash
+gh api -X POST repos/gene-t-kim/gene-t-kim.github.io/pages -f 'source[branch]=main' -f 'source[path]=/'
+```
+
+The site appears at <https://gene-t-kim.github.io> within a minute or two.
+After that, every `git push` to `main` redeploys automatically.
+
+To take it down again, disable Pages and flip the repo back to private:
+
+```bash
+gh api -X DELETE repos/gene-t-kim/gene-t-kim.github.io/pages
+```
+
+### A custom domain
+
+If you later want something like `genekim.net`, add a `CNAME` file containing
+just the domain, point the domain's DNS at GitHub, and set it under
+Settings → Pages. Worth doing before you print the URL on anything, since it
+keeps the address stable if you ever move off GitHub.
 
 ## Restyling
 
