@@ -43,19 +43,41 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="masthead">
-  <p class="masthead__name"><a href="index.html">Gene Kim</a></p>
-  <p class="masthead__affiliation">Academy Scholar &middot; Harvard Academy for International and Area Studies</p>
+<div class="layout">
 
-  <nav class="nav" aria-label="Main">
-    <a href="index.html">Profile</a>
-    <a href="publications.html" aria-current="page">Publications</a>
-    <a href="cv.html">CV</a>
-    <a href="mailto:genekim@fas.harvard.edu">Email</a>
-  </nav>
-</header>
+  <aside class="sidebar">
+    <img class="sidebar__photo" src="photo.svg" alt="Gene Kim" width="152" height="152">
 
-<main class="page" id="main">
+    <p class="sidebar__name"><a href="index.html">Gene Kim</a></p>
+    <p class="sidebar__affiliation">
+      Academy Scholar<br>
+      Harvard Academy for International and Area Studies
+    </p>
+    <p class="sidebar__email">
+      <a href="mailto:genekim@fas.harvard.edu">genekim@fas.harvard.edu</a>
+    </p>
+
+    <nav class="railnav" aria-label="Sections and pages">
+      <div class="railnav__group railnav__group--sections">
+        <p class="railnav__label">Profile</p>
+        <ul>
+          <li><a href="index.html#bio">Bio</a></li>
+          <li><a href="index.html#education">Education</a></li>
+          <li><a href="index.html#romanizer">Romanizer</a></li>
+        </ul>
+      </div>
+
+      <div class="railnav__group">
+        <p class="railnav__label">More</p>
+        <ul>
+          <li><a href="publications.html" aria-current="page">Publications</a></li>
+          <li><a href="cv.html">CV</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="content" id="main">
 
   <h1>Publications</h1>
 
@@ -227,7 +249,8 @@
        need — "Translations", "Conference papers", "Encyclopedia entries" — by
        copying an <h2> plus its <div class="pub-group">. -->
 
-</main>
+  </main>
+</div>
 
 <footer class="footer">
   <p>&copy; 2026 Gene Kim. Last updated September 2026.</p>

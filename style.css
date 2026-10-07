@@ -58,83 +58,124 @@ img { max-width: 100%; height: auto; }
 
 /* ---------------------------------------------------------- Page frame ---- */
 
-.page {
-  max-width: var(--measure);
+/* Two columns on desktop: a sticky identity rail, then the content. */
+.layout {
+  max-width: 64rem;
   margin: 0 auto;
   padding: 0 var(--gutter) 5rem;
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
 }
 
-/* The CV page needs the full window width for the PDF viewer. */
-.page--wide { max-width: 60rem; }
+.content { min-width: 0; padding-top: 3.5rem; }
 
-/* ------------------------------------------------------------- Masthead --- */
+/* ------------------------------------------------------------- Sidebar ---- */
 
-/* Shares the same measure and gutter as .page so the two line up. */
-.masthead {
-  max-width: var(--measure);
-  margin: 0 auto;
-  padding: 3.25rem var(--gutter) 0;
+.sidebar {
+  position: sticky;
+  top: 2rem;
+  padding-top: 3.5rem;
 }
 
-/* Matches .page--wide on the CV page. */
-.masthead--wide { max-width: 60rem; }
+.sidebar__photo {
+  display: block;
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-subtle);
+  margin-bottom: 1.25rem;
+}
 
-.masthead__name {
-  font-size: 1.5rem;
+.sidebar__name {
+  font-size: 1.375rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  margin: 0;
+  line-height: 1.2;
+  margin: 0 0 0.4rem;
 }
 
-.masthead__name a {
+.sidebar__name a {
   color: var(--text);
   text-decoration: none;
   border: 0;
 }
 
-.masthead__name a:hover { color: var(--accent); }
+.sidebar__name a:hover { color: var(--accent); background: none; }
 
-.masthead__affiliation {
+.sidebar__affiliation {
   font-family: var(--font-ui);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: var(--text-muted);
-  margin: 0.35rem 0 0;
+  margin: 0 0 0.75rem;
 }
 
-/* ------------------------------------------------------------------ Nav --- */
+.sidebar__email {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  margin: 0 0 1.5rem;
+  word-break: break-word;
+}
 
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 1.75rem 0 0;
-  padding: 0.9rem 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
+/* ----------------------------------------------------------- Rail nav ----- */
+
+.railnav {
   font-family: var(--font-ui);
   font-size: 0.875rem;
-  letter-spacing: 0.01em;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
 }
 
-.nav a {
+.railnav ul {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.railnav li { margin: 0; }
+
+.railnav a {
+  display: block;
+  padding: 0.3rem 0 0.3rem 0.75rem;
+  margin-left: calc(-0.75rem - 2px);
   color: var(--text-muted);
   text-decoration: none;
   border: 0;
-  padding-bottom: 2px;
+  border-left: 2px solid transparent;
 }
 
-.nav a:hover { color: var(--accent); }
+.railnav a:hover {
+  color: var(--accent);
+  background: none;
+  border-left-color: var(--accent);
+}
 
-/* Marks the current page. */
-.nav a[aria-current="page"] {
+/* Marks the page you're on, in the secondary list. */
+.railnav a[aria-current="page"] {
   color: var(--text);
   font-weight: 600;
-  box-shadow: inset 0 -2px 0 var(--accent);
+  border-left-color: var(--accent);
+}
+
+.railnav__label {
+  font-size: 0.6875rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-muted);
+  margin: 0 0 0.4rem;
+}
+
+/* Divider above the second group of links. */
+.railnav__group + .railnav__group {
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
 }
 
 /* ----------------------------------------------------------- Typography --- */
-
-main { padding-top: 2.75rem; }
 
 h1, h2, h3 {
   line-height: 1.25;
@@ -218,6 +259,85 @@ li { margin-bottom: 0.4rem; }
 .interests span {
   color: var(--text-muted);
   font-size: 1rem;
+}
+
+/* ------------------------------------------------------------ Sections ---- */
+
+.section + .section { margin-top: 4.5rem; }
+
+/* Keeps a jump-link target clear of the top edge of the window. */
+.section { scroll-margin-top: 2rem; }
+
+/* Carries the look the base h1 has, but on an h2 so the document keeps a
+   single h1. Used for the three section headings on the landing page. */
+.section__title {
+  font-family: var(--font-body);
+  font-size: 1.875rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin: 0 0 1.5rem;
+}
+
+/* The small-caps label style, on an h3 inside a section. */
+.subhead {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-muted);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ------------------------------------------------------------ Timeline ---- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline > li {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.15rem 0;
+  margin: 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.timeline > li:first-child { padding-top: 0.25rem; }
+.timeline > li:last-child  { border-bottom: 0; }
+
+.timeline__date {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: 0;
+  padding-top: 0.25rem;
+}
+
+.timeline__degree {
+  font-weight: 600;
+  margin: 0 0 0.1rem;
+}
+
+.timeline__place {
+  margin: 0 0 0.3rem;
+}
+
+.timeline__note {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
 }
 
 /* ---------------------------------------------------------- Contact box --- */
@@ -401,7 +521,7 @@ li { margin-bottom: 0.4rem; }
 /* --------------------------------------------------------------- Footer --- */
 
 .footer {
-  max-width: var(--measure);
+  max-width: 64rem;
   margin: 0 auto;
   padding: 1.5rem var(--gutter) 3rem;
   border-top: 1px solid var(--rule);
@@ -410,7 +530,6 @@ li { margin-bottom: 0.4rem; }
   color: var(--text-muted);
 }
 
-.page--wide + .footer { max-width: 60rem; }
 
 /* ------------------------------------------------------------- Utility ---- */
 
@@ -449,23 +568,68 @@ li { margin-bottom: 0.4rem; }
   body { font-size: 1rem; }
   h1   { font-size: 1.625rem; }
 
-  .masthead { padding-top: 2.25rem; }
+  /* Single column; the rail becomes a header above the content. */
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
-  .nav { gap: 1.1rem; font-size: 0.8125rem; }
+  .sidebar {
+    position: static;
+    padding-top: 2.25rem;
+  }
+
+  .sidebar__photo {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .content { padding-top: 0; }
+
+  /* Jump links read better as a horizontal row on a phone. */
+  .railnav__group--sections ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+  }
+
+  .railnav__group--sections a {
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .railnav__group--sections a:hover {
+    border-left: 0;
+    border-bottom-color: var(--accent);
+  }
 
   .contact dt { display: block; width: auto; margin-top: 0.5rem; }
 
   .cv-frame { height: 70vh; }
+
+  .timeline > li {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .timeline__date { padding-top: 0; }
+
+  .section + .section { margin-top: 3rem; }
 }
 
 /* ------------------------------------------------------------------ Print - */
 
 @media print {
-  .nav, .skip-link, .button-row, .cv-frame { display: none; }
+  .railnav, .sidebar__photo, .skip-link, .button-row, .cv-frame { display: none; }
 
   body { background: #fff; color: #000; font-size: 11pt; }
 
-  .page { max-width: none; }
+  .layout {
+    display: block;
+    max-width: none;
+  }
 
   a { color: #000; border: 0; }
 

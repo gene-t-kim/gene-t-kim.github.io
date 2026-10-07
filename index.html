@@ -13,110 +13,177 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="masthead">
-  <p class="masthead__name"><a href="index.html">Gene Kim</a></p>
-  <p class="masthead__affiliation">Academy Scholar &middot; Harvard Academy for International and Area Studies</p>
+<div class="layout">
 
-  <nav class="nav" aria-label="Main">
-    <a href="index.html" aria-current="page">Profile</a>
-    <a href="publications.html">Publications</a>
-    <a href="cv.html">CV</a>
-    <a href="mailto:genekim@fas.harvard.edu">Email</a>
-    <!-- Optional extras — uncomment and fill in the ones you want:
-    <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
-    <a href="https://harvard.academia.edu/XXXX">Academia.edu</a>
-    -->
-  </nav>
-</header>
+  <!-- =========================================================== SIDEBAR ===
+       This block is identical on every page except for the jump links and
+       the aria-current marker. If you change your photo, name, or email,
+       change it here, in publications.html, and in cv.html.
+       ====================================================================== -->
+  <aside class="sidebar">
+    <!-- EDIT: drop a square photo in this folder and point src at it.
+         A JPEG around 600x600 is plenty — it displays at 152px. -->
+    <img class="sidebar__photo" src="photo.svg" alt="Gene Kim" width="152" height="152">
 
-<main class="page" id="main">
+    <p class="sidebar__name"><a href="index.html">Gene Kim</a></p>
+    <p class="sidebar__affiliation">
+      Academy Scholar<br>
+      Harvard Academy for International and Area Studies
+    </p>
+    <p class="sidebar__email">
+      <a href="mailto:genekim@fas.harvard.edu">genekim@fas.harvard.edu</a>
+    </p>
 
-  <h1>About</h1>
+    <nav class="railnav" aria-label="Sections and pages">
+      <div class="railnav__group railnav__group--sections">
+        <p class="railnav__label">On this page</p>
+        <ul>
+          <li><a href="#bio">Bio</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#romanizer">Romanizer</a></li>
+        </ul>
+      </div>
 
-  <p class="lead">
-    I am a historian of modern Korea and Japan, and an Academy Scholar at the
-    Harvard Academy for International and Area Studies.
-  </p>
+      <div class="railnav__group">
+        <p class="railnav__label">More</p>
+        <ul>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="cv.html">CV</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
 
-  <!-- EDIT: your training and prior positions. -->
-  <p>
-    I received my PhD in [field] from [Institution] in [year]. Before coming to
-    the Harvard Academy I was [a fellowship or position] at [Institution]. My
-    research has been supported by [funders].
-  </p>
+  <!-- =========================================================== CONTENT === -->
+  <main class="content" id="main">
 
-  <h2>Research interests</h2>
+    <h1 class="visually-hidden">Gene Kim — historian of modern Korea and Japan</h1>
 
-  <!-- EDIT: generic descriptions — sharpen these once the book takes shape. -->
-  <ul class="interests">
-    <li>
-      <strong>Modern Korean history</strong>
-      <span>
-        The social and political transformation of the Korean peninsula from the
-        late nineteenth century onward, with particular attention to how
-        ordinary people encountered and negotiated state power.
-      </span>
-    </li>
-    <li>
-      <strong>Japanese empire and colonial rule</strong>
-      <span>
-        The institutions and everyday practices of imperial administration, and
-        the ways colonial policy was made, contested, and revised on the ground
-        rather than only in the metropole.
-      </span>
-    </li>
-    <li>
-      <strong>Transnational and migration history</strong>
-      <span>
-        The movement of people, goods, and ideas across the region, and what
-        those circulations bring into view that single-country histories tend to
-        leave out.
-      </span>
-    </li>
-    <li>
-      <strong>Memory and the afterlives of empire</strong>
-      <span>
-        How the colonial past is remembered, commemorated, and disputed in Korea
-        and Japan today, including in textbooks, courtrooms, and public
-        monuments.
-      </span>
-    </li>
-  </ul>
+    <!-- ------------------------------------------------------------- Bio -->
+    <section class="section" id="bio">
+      <h2 class="section__title">Bio</h2>
 
-  <h2>Current projects</h2>
+      <p class="lead">
+        I am a historian of modern Korea and Japan, and an Academy Scholar at
+        the Harvard Academy for International and Area Studies.
+      </p>
 
-  <!-- EDIT: most historians lead with the book. Delete the second entry if
-       you have only one project to describe. -->
-  <h3>Book project: [Working Title]</h3>
-  <p>
-    [Three or four sentences: the subject, the argument, the sources, and the
-    stage it has reached — under contract, in revision, in draft.]
-  </p>
+      <!-- EDIT: your training and prior positions. -->
+      <p>
+        I received my PhD in [field] from [Institution] in [year]. Before coming
+        to the Harvard Academy I was [a fellowship or position] at [Institution].
+        My research has been supported by [funders].
+      </p>
 
-  <h3>[Second project title]</h3>
-  <p>
-    [A shorter paragraph on the next project, an article in progress, or a
-    digital or collaborative venture. Link out to anything already public.]
-  </p>
+      <h3 class="subhead">Research interests</h3>
 
-  <h2>Contact</h2>
+      <ul class="interests">
+        <li>
+          <strong>Modern Korean history</strong>
+          <span>
+            The social and political transformation of the Korean peninsula from
+            the late nineteenth century onward, with particular attention to how
+            ordinary people encountered and negotiated state power.
+          </span>
+        </li>
+        <li>
+          <strong>Japanese empire and colonial rule</strong>
+          <span>
+            The institutions and everyday practices of imperial administration,
+            and the ways colonial policy was made, contested, and revised on the
+            ground rather than only in the metropole.
+          </span>
+        </li>
+        <li>
+          <strong>Transnational and migration history</strong>
+          <span>
+            The movement of people, goods, and ideas across the region, and what
+            those circulations bring into view that single-country histories tend
+            to leave out.
+          </span>
+        </li>
+        <li>
+          <strong>Memory and the afterlives of empire</strong>
+          <span>
+            How the colonial past is remembered, commemorated, and disputed in
+            Korea and Japan today, including in textbooks, courtrooms, and
+            public monuments.
+          </span>
+        </li>
+      </ul>
+    </section>
 
-  <!-- EDIT: your real contact details. Delete rows you don't want public. -->
-  <dl class="contact">
-    <dt>Email</dt>
-    <dd><a href="mailto:genekim@fas.harvard.edu">genekim@fas.harvard.edu</a></dd>
+    <!-- ------------------------------------------------------- Education -->
+    <section class="section" id="education">
+      <h2 class="section__title">Education</h2>
 
-    <dt>Office</dt>
-    <dd>
-      Harvard Academy for International and Area Studies,
-      [street address], Cambridge, MA
-    </dd>
-  </dl>
+      <!-- EDIT: one entry per degree, most recent first. Delete the
+           "thesis" line where it doesn't apply. -->
+      <ol class="timeline">
+        <li>
+          <p class="timeline__date">[Year]</p>
+          <div class="timeline__body">
+            <p class="timeline__degree">PhD, [Field]</p>
+            <p class="timeline__place">[University]</p>
+            <p class="timeline__note">
+              Dissertation: &ldquo;[Dissertation Title]&rdquo;<br>
+              Advisor: [Name]
+            </p>
+          </div>
+        </li>
+        <li>
+          <p class="timeline__date">[Year]</p>
+          <div class="timeline__body">
+            <p class="timeline__degree">MA, [Field]</p>
+            <p class="timeline__place">[University]</p>
+          </div>
+        </li>
+        <li>
+          <p class="timeline__date">[Year]</p>
+          <div class="timeline__body">
+            <p class="timeline__degree">BA, [Field]</p>
+            <p class="timeline__place">[University]</p>
+            <p class="timeline__note">[Honors, if any]</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-</main>
+    <!-- ------------------------------------------------------- Romanizer -->
+    <section class="section" id="romanizer">
+      <h2 class="section__title">Romanizer</h2>
+
+      <!-- EDIT: describe the tool in your own words and point the button at
+           its real URL. Replace both the href and the displayed address. -->
+      <p class="lead">
+        A browser-based tool for romanizing [Korean / Japanese] text.
+      </p>
+
+      <p>
+        [Two or three sentences: what the tool does, which romanization system
+        it follows &mdash; McCune&ndash;Reischauer, Revised Romanization,
+        Hepburn &mdash; who it is for, and what problem it solved for you. If it
+        handles edge cases others get wrong, that is worth saying here.]
+      </p>
+
+      <p>
+        [Optional: a sentence on how it was built, whether the source is open,
+        and how people can report problems or contribute.]
+      </p>
+
+      <div class="button-row">
+        <a class="button" href="https://example.com/romanizer" target="_blank" rel="noopener">
+          Open the Romanizer
+        </a>
+        <span class="note">Free to use, no account needed</span>
+      </div>
+    </section>
+
+  </main>
+</div>
 
 <footer class="footer">
-  <p>&copy; 2026 Gene Kim. Last updated September 2026.</p>
+  <p>&copy; 2026 Gene Kim. Last updated October 2026.</p>
 </footer>
 
 </body>

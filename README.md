@@ -3,11 +3,16 @@
 Three static pages sharing one stylesheet. No build step, no dependencies.
 
 ```
-index.html          Profile & research interests
+index.html          Landing page: Bio, Education, Romanizer
 publications.html   Publications with collapsible abstracts and links
 cv.html             Live Dropbox CV (embedded + download link)
 style.css           All styling; edit the variables at the top to restyle
+photo.svg           Placeholder portrait — replace with your own photo
 ```
+
+Every page shares a sticky left sidebar carrying the photo, name, email, and
+navigation. On the landing page the top group jumps between the three
+sections; elsewhere those links point back to `index.html#bio` and so on.
 
 ## Filling in your content
 
@@ -18,11 +23,30 @@ To find them all:
 grep -n "EDIT" *.html
 ```
 
-Three things appear on all three pages, so change them in all three:
+### The sidebar is duplicated
 
-- your name in `.masthead__name`
-- your affiliation in `.masthead__affiliation`
-- the email address in the nav and the footer year
+The `<aside class="sidebar">` block is copied into all three pages, so edits to
+the photo, name, affiliation, or email have to be made in each one. To check
+they stayed in sync:
+
+```bash
+grep -c "sidebar__email" index.html publications.html cv.html
+```
+
+### Your photo
+
+`photo.svg` is a grey placeholder. Drop a square photo into this folder and
+point the `src` at it in all three pages — a JPEG around 600×600 is plenty,
+since it displays at 152px:
+
+```bash
+sed -i '' 's|src="photo.svg"|src="photo.jpg"|' index.html publications.html cv.html
+```
+
+### The Romanizer link
+
+The button in the Romanizer section of `index.html` points at
+`https://example.com/romanizer`. Replace that `href` with the tool's real URL.
 
 ## Wiring up the Dropbox CV
 
