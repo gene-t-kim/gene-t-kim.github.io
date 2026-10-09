@@ -403,6 +403,15 @@ li { margin-bottom: 0.4rem; }
 
 .abstract__body p:last-child { margin-bottom: 0; }
 
+.abstract__keywords {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--rule);
+}
+
 /* --------------------------------------------------------------- Footer --- */
 
 .footer {
