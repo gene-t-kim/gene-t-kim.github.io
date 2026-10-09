@@ -94,7 +94,7 @@ img { max-width: 100%; height: auto; }
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.4rem;
 }
 
 .sidebar__name a {
@@ -104,6 +104,14 @@ img { max-width: 100%; height: auto; }
 }
 
 .sidebar__name a:hover { color: var(--accent); background: none; }
+
+.sidebar__affiliation {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+}
 
 .sidebar__email {
   font-family: var(--font-ui);
