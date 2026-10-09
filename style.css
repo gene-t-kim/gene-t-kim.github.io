@@ -436,6 +436,27 @@ li { margin-bottom: 0.4rem; }
   border-top: 1px solid var(--rule);
 }
 
+/* ---------------------------------------------------------------- Photo --- */
+
+.photo {
+  margin: 4.5rem 0 0;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.photo figcaption {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-top: 0.7rem;
+}
+
 /* --------------------------------------------------------------- Footer --- */
 
 .footer {
