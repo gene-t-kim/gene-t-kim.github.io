@@ -160,21 +160,6 @@ img { max-width: 100%; height: auto; }
   border-left-color: var(--accent);
 }
 
-.railnav__label {
-  font-size: 0.6875rem;
-  font-weight: 650;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--text-muted);
-  margin: 0 0 0.4rem;
-}
-
-/* Divider above the second group of links. */
-.railnav__group + .railnav__group {
-  border-top: 1px solid var(--rule);
-  padding-top: 1rem;
-}
-
 /* ----------------------------------------------------------- Typography --- */
 
 h1, h2, h3 {
@@ -268,51 +253,6 @@ li { margin-bottom: 0.4rem; }
   border-bottom: 1px solid var(--rule);
 }
 
-/* ------------------------------------------------------------ Timeline ---- */
-
-.timeline {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.timeline > li {
-  display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr);
-  gap: 1.5rem;
-  padding: 1.15rem 0;
-  margin: 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.timeline > li:first-child { padding-top: 0.25rem; }
-.timeline > li:last-child  { border-bottom: 0; }
-
-.timeline__date {
-  font-family: var(--font-ui);
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-  margin: 0;
-  padding-top: 0.25rem;
-}
-
-.timeline__degree {
-  font-weight: 600;
-  margin: 0 0 0.1rem;
-}
-
-.timeline__place {
-  margin: 0 0 0.3rem;
-}
-
-.timeline__note {
-  font-family: var(--font-ui);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--text-muted);
-  margin: 0;
-}
-
 /* -------------------------------------------------------------- Topics ---- */
 
 /* A short list of research interests — one line each, no descriptions. */
@@ -337,34 +277,6 @@ li { margin-bottom: 0.4rem; }
   height: 5px;
   border-radius: 50%;
   background: var(--accent);
-}
-
-/* ---------------------------------------------------------- Contact box --- */
-
-.contact {
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  line-height: 1.9;
-  margin: 0;
-}
-
-.contact dt {
-  display: inline-block;
-  width: 5.5rem;
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.contact dd {
-  display: inline;
-  margin: 0;
-}
-
-.contact dd::after {
-  content: "";
-  display: block;
 }
 
 /* ------------------------------------------------------------- Buttons ---- */
@@ -400,24 +312,6 @@ li { margin-bottom: 0.4rem; }
   font-family: var(--font-ui);
   font-size: 0.8125rem;
   color: var(--text-muted);
-}
-
-/* ------------------------------------------------------------ CV viewer --- */
-
-.cv-frame {
-  width: 100%;
-  height: min(85vh, 1100px);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  background: var(--bg-subtle);
-}
-
-/* Shown only when the browser cannot render the embedded PDF. */
-.cv-fallback {
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  color: var(--text-muted);
-  margin-top: 0.9rem;
 }
 
 /* ---------------------------------------------------------- Publications -- */
@@ -604,24 +498,13 @@ li { margin-bottom: 0.4rem; }
     border-bottom-color: var(--accent);
   }
 
-  .contact dt { display: block; width: auto; margin-top: 0.5rem; }
-
-  .cv-frame { height: 70vh; }
-
-  .timeline > li {
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
-  }
-
-  .timeline__date { padding-top: 0; }
-
   .section + .section { margin-top: 3rem; }
 }
 
 /* ------------------------------------------------------------------ Print - */
 
 @media print {
-  .railnav, .sidebar__photo, .skip-link, .button-row, .cv-frame { display: none; }
+  .railnav, .sidebar__photo, .skip-link, .button-row { display: none; }
 
   body { background: #fff; color: #000; font-size: 11pt; }
 

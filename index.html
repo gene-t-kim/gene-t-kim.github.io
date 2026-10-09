@@ -15,11 +15,7 @@
 
 <div class="layout">
 
-  <!-- =========================================================== SIDEBAR ===
-       This block is identical on every page except for the jump links and
-       the aria-current marker. If you change your photo, name, or email,
-       change it here, in publications.html, and in cv.html.
-       ====================================================================== -->
+  <!-- =========================================================== SIDEBAR === -->
   <aside class="sidebar">
     <img class="sidebar__photo" src="photo.jpg" alt="Gene Kim" width="152" height="152">
 
@@ -32,21 +28,12 @@
       <a href="mailto:genekim@fas.harvard.edu">genekim@fas.harvard.edu</a>
     </p>
 
-    <nav class="railnav" aria-label="Sections and pages">
+    <nav class="railnav" aria-label="Sections">
       <div class="railnav__group railnav__group--sections">
-        <p class="railnav__label">On this page</p>
         <ul>
           <li><a href="#bio">Bio</a></li>
-          <li><a href="#education">Education</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#romanizer">Romanizer</a></li>
-        </ul>
-      </div>
-
-      <div class="railnav__group">
-        <p class="railnav__label">More</p>
-        <ul>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="cv.html">CV</a></li>
         </ul>
       </div>
     </nav>
@@ -88,30 +75,49 @@
       </ul>
     </section>
 
-    <!-- ------------------------------------------------------- Education -->
-    <section class="section" id="education">
-      <h2 class="section__title">Education</h2>
+    <!-- ---------------------------------------------------- Publications -->
+    <!-- ADDING A PUBLICATION — copy this block into the list below:
 
-      <!-- EDIT: add MA/BA entries here if you want them listed — copy one
-           <li> block and fill it in. Keep most recent first. -->
-      <ol class="timeline">
-        <li>
-          <p class="timeline__date">2026</p>
-          <div class="timeline__body">
-            <p class="timeline__degree">PhD, History and East Asian Languages</p>
-            <p class="timeline__place">
-              Department of East Asian Languages and Civilizations,
-              Harvard University
-            </p>
-            <p class="timeline__note">
-              Dissertation: &ldquo;Upwellings of Oceanic Decolonization: Coastal
-              Governance in Japan and Korea, 1894&ndash;1958&rdquo;<br>
-              <a href="https://us-jf.org/en/news/usjf-names-harvard-phd-kim-as-winner-of-richard-j-samuels-dissertation-award-in-japanese-studies">Richard
-              J. Samuels Dissertation Award</a>
-            </p>
-          </div>
-        </li>
-      </ol>
+           <article class="pub">
+             <h3 class="pub__title">&ldquo;Title of the Article.&rdquo;</h3>
+             <p class="pub__venue"><em>Journal Name</em>, Vol. 1, 2027.</p>
+             <details class="abstract">
+               <summary>Abstract</summary>
+               <div class="abstract__body"><p>Abstract text.</p></div>
+             </details>
+             <p class="pub__links"><a href="#">DOI</a> <a href="#">PDF</a></p>
+           </article>
+
+         Every line but the title is optional. Keep newest first. For a
+         co-authored piece add <p class="pub__authors"> above the venue and
+         wrap your own name in <span class="me">.
+         ------------------------------------------------------------------ -->
+    <section class="section" id="publications">
+      <h2 class="section__title">Publications</h2>
+
+      <div class="pub-group">
+
+        <article class="pub">
+          <h3 class="pub__title">
+            &ldquo;Fixing Post-colonial Sovereignty at Sea: South Korean Maritime
+            Boundaries from Liberation to War.&rdquo;
+          </h3>
+          <p class="pub__venue">Accepted at <em>Journal of Korean Studies</em>.</p>
+        </article>
+
+        <article class="pub">
+          <h3 class="pub__title">
+            &ldquo;Yukchi wa haeyang ŭi kwan’kye rŭl chungjaehagi:
+            Hamgyŏngdo myŏngt’ae ŏŏp nodong kwa haeyang yŏngt’ohwa
+            [Mediating land and sea: labor in the Hamgyŏng Province pollock
+            fishery and oceanic territorialization].&rdquo;
+          </h3>
+          <p class="pub__venue">
+            <em>Yŏksa pip’yŏng</em>, Vol. 146, Spring 2024 (in Korean).
+          </p>
+        </article>
+
+      </div>
     </section>
 
     <!-- ------------------------------------------------------- Romanizer -->
@@ -130,8 +136,7 @@
       </p>
 
       <div class="button-row">
-        <!-- EDIT-ROMANIZER-URL: point this at the live tool. -->
-        <a class="button" href="https://example.com/romanizer" target="_blank" rel="noopener">
+        <a class="button" href="https://tgkgtk.github.io/korean-mccune-reischauer-romanizer/" target="_blank" rel="noopener">
           Open the Romanizer
         </a>
         <span class="note">Free to use, no account needed</span>
