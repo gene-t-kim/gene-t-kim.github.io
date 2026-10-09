@@ -7,7 +7,7 @@ index.html          Landing page: Bio, Education, Romanizer
 publications.html   Publications with collapsible abstracts and links
 cv.html             Live Dropbox CV (embedded + download link)
 style.css           All styling; edit the variables at the top to restyle
-photo.svg           Placeholder portrait — replace with your own photo
+photo.jpg           Sidebar portrait (600x600, displays at 152px)
 ```
 
 Every page shares a sticky left sidebar carrying the photo, name, email, and
@@ -35,12 +35,12 @@ grep -c "sidebar__email" index.html publications.html cv.html
 
 ### Your photo
 
-`photo.svg` is a grey placeholder. Drop a square photo into this folder and
-point the `src` at it in all three pages — a JPEG around 600×600 is plenty,
-since it displays at 152px:
+`photo.jpg` is a 600×600 square, displayed at 152px in a circle. To swap it,
+overwrite the file with another square image. If the new one isn't square,
+crop it first — `sips` is built into macOS:
 
 ```bash
-sed -i '' 's|src="photo.svg"|src="photo.jpg"|' index.html publications.html cv.html
+sips -c 1388 1388 original.jpg --out square.jpg && sips -z 600 600 square.jpg --out photo.jpg
 ```
 
 ### The Romanizer link
