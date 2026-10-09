@@ -51,37 +51,30 @@ also works, but a local server matches how the site behaves once deployed.
 
 ## Publishing
 
-This repo is <https://github.com/gene-t-kim/gene-t-kim.github.io>. It is
-currently **private**, and GitHub Pages is **not** enabled — nothing is public
-yet.
+The site is live at <https://gene-t-kim.github.io>, served from the `main`
+branch of <https://github.com/gene-t-kim/gene-t-kim.github.io>.
 
-To publish edits, commit and push as usual:
-
-```bash
-git add -A && git commit -m "Update profile" && git push
-```
-
-### Going live
-
-GitHub Pages needs a public repo on the free plan, so going live is two steps.
-Run these once the bracketed placeholders are filled in:
+To publish a change, commit and push — Pages redeploys within a minute or two:
 
 ```bash
-gh repo edit gene-t-kim/gene-t-kim.github.io --visibility public --accept-visibility-change-consequences
+git add -A && git commit -m "Update bio" && git push
 ```
+
+Two `gh` accounts are authenticated on this machine. The repo belongs to
+`gene-t-kim`, so if a `gh` command returns 404, check which one is active:
 
 ```bash
-gh api -X POST repos/gene-t-kim/gene-t-kim.github.io/pages -f 'source[branch]=main' -f 'source[path]=/'
+gh auth status && gh auth switch --user gene-t-kim
 ```
 
-The site appears at <https://gene-t-kim.github.io> within a minute or two.
-After that, every `git push` to `main` redeploys automatically.
-
-To take it down again, disable Pages and flip the repo back to private:
+To take the site down:
 
 ```bash
 gh api -X DELETE repos/gene-t-kim/gene-t-kim.github.io/pages
 ```
+
+Note that making the repo private again does not un-publish anything already
+cached or indexed by search engines.
 
 ### A custom domain
 
