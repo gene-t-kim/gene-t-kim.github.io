@@ -219,6 +219,22 @@ a:focus-visible {
 ul, ol { padding-left: 1.25rem; }
 li { margin-bottom: 0.4rem; }
 
+/* --------------------------------------------------------- Sidebar mark --- */
+
+/* Decorative pair of fish at the foot of the rail. */
+.sidebar__mark {
+  margin-top: 2.5rem;
+  max-width: 11.5rem;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.sidebar__mark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ------------------------------------------------------------ Sections ---- */
 
 .section + .section { margin-top: 4.5rem; }
