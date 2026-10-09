@@ -219,6 +219,14 @@ a:focus-visible {
 ul, ol { padding-left: 1.25rem; }
 li { margin-bottom: 0.4rem; }
 
+/* Holds the reusable SVG geometry; never renders. */
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 /* --------------------------------------------------------- Sidebar mark --- */
 
 /* Decorative pair of fish at the foot of the rail. */
@@ -436,10 +444,26 @@ li { margin-bottom: 0.4rem; }
   border-top: 1px solid var(--rule);
 }
 
+/* ------------------------------------------------------------ Partition --- */
+
+/* The same pair of fish, centred, dividing the text from the photographs. */
+.partition {
+  max-width: 11.5rem;
+  margin: 4.5rem auto 0;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.partition svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ---------------------------------------------------------------- Photo --- */
 
 .photo {
-  margin: 4.5rem 0 0;
+  margin: 3rem 0 0;
 }
 
 .photo img {
