@@ -234,33 +234,6 @@ a:focus-visible {
 ul, ol { padding-left: 1.25rem; }
 li { margin-bottom: 0.4rem; }
 
-/* Research-interest list: a little more air, no bullets. */
-.interests {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.interests > li {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--rule);
-  margin: 0;
-}
-
-.interests > li:first-child { padding-top: 0.25rem; }
-.interests > li:last-child  { border-bottom: 0; }
-
-.interests strong {
-  display: block;
-  font-size: 1.0625rem;
-  margin-bottom: 0.2rem;
-}
-
-.interests span {
-  color: var(--text-muted);
-  font-size: 1rem;
-}
-
 /* ------------------------------------------------------------ Sections ---- */
 
 .section + .section { margin-top: 4.5rem; }
@@ -338,6 +311,32 @@ li { margin-bottom: 0.4rem; }
   line-height: 1.6;
   color: var(--text-muted);
   margin: 0;
+}
+
+/* -------------------------------------------------------------- Topics ---- */
+
+/* A short list of research interests — one line each, no descriptions. */
+.topics {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topics > li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.topics > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 /* ---------------------------------------------------------- Contact box --- */
